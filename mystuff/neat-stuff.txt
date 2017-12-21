@@ -1,0 +1,13 @@
+join two files:
+file1 : a,b
+fiel2 : b,c
+result: a,b,c
+join -t , -1 2 -2 1 -o 1.1,1.2,2.2 <(sort -k 2 -t , file1) <(sort -t , file2)
+
+
+#Selinux, context recursive persisent:
+semanage fcontext -a -t postgresql_db_t "/data01/pgsql(/.*)?"
+
+
+#stuff I can't remember:
+find /etc/httpd/conf.d -name "*.conf" -exec rename conf conf2 {} \;

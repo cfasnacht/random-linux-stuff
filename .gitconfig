@@ -1,0 +1,28 @@
+#~/.gitconfig
+[user]
+  name = Christian Fasnacht
+  email = fasnacht@puzzle.ch
+[alias]
+  ci = commit
+  st = status
+  df = diff
+  dfc = diff --cached
+  # git log pretty
+  lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+  # git log pretty + iso date format
+  lgd = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %Cgreen(%ci) %C(bold blue)<%an>%Creset' --abbrev-commit
+  filesmodif = diff-tree --no-commit-id --name-only -r
+[color]
+  #git colors in shell
+  ui = true
+[core]
+	excludesfile = /home/cfasnacht/.gitignore
+  editor = vim
+	autocrlf = input
+[push]
+	default = simple
+[diff]
+  tool = diff
+[credential]
+  # cache login for 10 min
+  helper = cache --timeout=600
