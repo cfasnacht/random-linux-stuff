@@ -16,11 +16,11 @@
   #git colors in shell
   ui = true
 [core]
-	excludesfile = /home/cfasnacht/.gitignore
+  excludesfile = /home/cfasnacht/.gitignore
   editor = vim
-	autocrlf = input
+  autocrlf = input
 [push]
-	default = simple
+  default = simple
 [diff]
   tool = diff
 [credential]
