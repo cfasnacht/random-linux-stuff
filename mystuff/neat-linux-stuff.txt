@@ -23,9 +23,8 @@ set -x			# activate debugging from here
 set +x			# stop debugging from here
 set -e      # Exit immediately if a command exits with a non-zero status.
 
+#grep OR
+grep -e this -e that
 
-
-#company stuff:
-
-make curl to not use a proxy:
+#make curl to not use a proxy:
 curl --noproxy "*" example.com
