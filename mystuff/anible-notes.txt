@@ -1,0 +1,18 @@
+- set_fact:
+  vra_insync_node: "{{ cluster_status.stdout | from_json | json_query(\"[?syncStatus=='Sync'].nodeHost\") }}"
+
+ansible pitfall:
+
+the problem here is the serial: 1
+- name: restart vra cluster
+  hosts: vra
+  tags: vra-cluster-restart
+  serial: 1
+  max_fail_percentage: 0
+  tasks:
+  - name:  test
+    shell: touch /tmp/bla`date +%F%T`
+    run_once: true
+    delegate_to: bla.example.com
+
+run_once does not work in conjunction with when, if execution is skipped on the first host because of the when condition it is not executed at all
