@@ -26,5 +26,8 @@ set -e      # Exit immediately if a command exits with a non-zero status.
 #grep OR
 grep -e this -e that
 
+#replace # commented and empty lines
+sed -e 's/#.*$//' -e '/^$/d'
+
 #make curl to not use a proxy:
 curl --noproxy "*" example.com
