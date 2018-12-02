@@ -16,3 +16,6 @@ the problem here is the serial: 1
     delegate_to: bla.example.com
 
 run_once does not work in conjunction with when, if execution is skipped on the first host because of the when condition it is not executed at all
+
+#run debug stuff localy
+ansible -m debug -a msg="{{ '-'.join(('str1', 'str2', 'str3')) }}" localhost
