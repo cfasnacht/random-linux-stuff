@@ -11,12 +11,14 @@
   lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
   # git log pretty + iso date format
   lgd = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %Cgreen(%ci) %C(bold blue)<%an>%Creset' --abbrev-commit
+  # list file that were modified in a commit
   filesmodif = diff-tree --no-commit-id --name-only -r
+  # clean up history, remove unused, old objects...
+  mycleanup = git -c gc.reflogExpire=0 -c gc.reflogExpireUnreachable=0 -c gc.rerereresolved=0 -c gc.rerereunresolved=0 -c gc.pruneExpire=now gc "$@"
 [color]
   #git colors in shell
   ui = true
 [core]
-  excludesfile = /home/cfasnacht/.gitignore
   editor = vim
   autocrlf = input
 [push]
@@ -24,5 +26,8 @@
 [diff]
   tool = diff
 [credential]
-  # cache login for 10 min
+  # cache login for 100 min
   helper = cache --timeout=600
+
+#[credential "https://git.example.com"]
+#  username = myuser
