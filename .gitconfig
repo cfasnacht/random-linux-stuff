@@ -9,6 +9,8 @@
   dfc = diff --cached
   # git log pretty
   lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+  # git log pretty full hash
+  lgh = log --color --graph --pretty=format:'%Cred%H%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
   # git log pretty + iso date format
   lgd = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %Cgreen(%ci) %C(bold blue)<%an>%Creset' --abbrev-commit
   # list file that were modified in a commit
