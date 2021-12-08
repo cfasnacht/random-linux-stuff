@@ -82,3 +82,20 @@ SSH Tunnel:
 Tunnel 8080 on the localhost to 192.168.58.20 port 44323
 ssh -L 8080:192.168.58.1:44323 root@192.168.58.1
 ```
+
+
+```
+print current network load:
+nload <interface name>
+```
+
+```
+print UDP network statistics: (e.g. if there are UDP connection problems)
+netstat -suna
+```
+
+```
+Git:
+find last modified branch
+git for-each-ref --sort=-committerdate refs/heads/
+```

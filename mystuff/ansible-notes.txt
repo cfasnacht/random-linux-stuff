@@ -19,3 +19,25 @@ run_once does not work in conjunction with when, if execution is skipped on the 
 
 #run debug stuff localy
 ansible -m debug -a msg="{{ '-'.join(('str1', 'str2', 'str3')) }}" localhost
+
+#print all vars of a server
+ansible-inventory inventories/myinv --host mygroup[0] |less
+
+old:
+ANSIBLE_CALLBACK_WHITELIST=profile_tasks ansible-playbook ...
+new:
+ANSIBLE_CALLBACK_WHITELIST=ansible.posix.profile_tasks ansible-playbook ...
+
+regex Example:
+ - name: Set fact stage
+  set_fact:
+    company_environment: "{{ ansible_vars_file.stdout | regex_findall('environment:(.*)') | first | default ('') }}"
+
+Debug wait:
+- name: Wait
+  pause:
+    prompt: Press enter
+
+Good jinja ressources:
+https://ttl255.com/jinja2-tutorial-part-3-whitespace-control/
+http://jinja.quantprogramming.com/
