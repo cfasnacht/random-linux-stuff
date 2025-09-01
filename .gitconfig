@@ -6,7 +6,9 @@
   ci = commit
   st = status
   df = diff
+  dfw = diff --word-diff=color
   dfc = diff --cached
+  dfcw = diff --cached --word-diff=color
   # git log pretty
   lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
   # git log pretty full hash
@@ -29,7 +31,7 @@
   tool = diff
 [credential]
   # cache login for 100 min
-  helper = cache --timeout=600
+  helper = cache --timeout=6000
 
 #[credential "https://git.example.com"]
 #  username = myuser
