@@ -53,7 +53,7 @@ endif
 
 "set pastetoggle=<F2> only needed in sles
 
-call pathogen#infect()
+"call pathogen#infect()
 filetype plugin indent on
 
 autocmd BufRead,BufNewFile *.pp setfiletype puppet

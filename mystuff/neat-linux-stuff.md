@@ -1,10 +1,15 @@
 ## Random linux stuff
 
-### Grep
+## Grep
 
 ```
 Grep or:
 grep -e this -e that
+```
+
+```
+highlight with grep: (show interfaces with link:)
+ip a | grep --color=auto -C 10 ' UP'
 ```
 
 ```
@@ -29,7 +34,8 @@ read remote openssl cert:
 openssl s_client -showcerts -connect example.com:443
 ```
 
-### bash scripting:
+## bash scripting:
+
 ```
 set -x			# activate debugging from here
 set +x			# stop debugging from here
@@ -43,7 +49,27 @@ set -e      # Exit immediately if a command exits with a non-zero status.
 :%s#/etc/ssl/certs/#/etc/pki/tls/certs#gc
 ```
 
+```
+Personal cheat sheet:
+f : => jumps first : on the same line
+```
+
+## tmux
+
+```
+# tmux print tmux session output without attaching:
+tmux capture-pane -pt "$target-pane" -E -10
+# [-E end-line] [-S start-line] [-t target-pane]
+```
+
 ## Asorted
+
+```
+show filename and content of multiple files:
+head -n 9999 *.txt
+```
+
+
 ```
 join two files:
 file1 : a,b
@@ -98,4 +124,17 @@ netstat -suna
 Git:
 find last modified branch
 git for-each-ref --sort=-committerdate refs/heads/
+```
+
+```
+Docker / podman:
+docker/podman run -ti --entrypoint=/bin/sh  -p 127.0.0.1:5000:5000 --mount type=bind,source="$(pwd)"/client_secrets.json,target=/web/pitc-forms/client_secrets.json --env-file=.env registry.puzzle.ch/puzzle/forms:git-cf36980b
+```
+
+```
+openshift debug:
+oc debug forms-273-6vngb --as-root
+oc port-forward forms-273-6vngb-debug 5000
+
+Im terminal env -0 verwenden um die env variables anzuschauen. echo hat bei mir nicht funktioniert, hat ein newline nicht ausgegeben
 ```
