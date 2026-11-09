@@ -53,7 +53,7 @@ endif
 
 "set pastetoggle=<F2> only needed in sles
 
-call pathogen#infect()
+"call pathogen#infect()
 filetype plugin indent on
 
 autocmd BufRead,BufNewFile *.pp setfiletype puppet
@@ -73,3 +73,4 @@ highlight DiffAdd cterm=none ctermfg=green ctermbg=black
 highlight DiffDelete cterm=none ctermfg=darkred ctermbg=black
 highlight DiffChange cterm=none ctermfg=none ctermbg=black
 highlight DiffText cterm=none ctermfg=black ctermbg=darkyellow
+vmap <C-c> "+y

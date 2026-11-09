@@ -62,6 +62,24 @@ tmux capture-pane -pt "$target-pane" -E -10
 # [-E end-line] [-S start-line] [-t target-pane]
 ```
 
+## tar backup of a linux:
+
+```
+tar -cvpzf backup-$(date -I).tar.gz \
+--exclude=backup-$(date -I).tar.gz \
+--exclude=/proc \
+--exclude=/tmp \
+--exclude=/mnt \
+--exclude=/dev \
+--exclude=/sys \
+--exclude=/run \
+--exclude=/media \
+--exclude=/var/log \
+--exclude=/var/cache/apt/archives \
+--exclude=/usr/src/linux-headers* \
+/
+```
+
 ## Asorted
 
 ```
@@ -109,7 +127,6 @@ Tunnel 8080 on the localhost to 192.168.58.20 port 44323
 ssh -L 8080:192.168.58.1:44323 root@192.168.58.1
 ```
 
-
 ```
 print current network load:
 nload <interface name>
@@ -137,4 +154,15 @@ oc debug forms-273-6vngb --as-root
 oc port-forward forms-273-6vngb-debug 5000
 
 Im terminal env -0 verwenden um die env variables anzuschauen. echo hat bei mir nicht funktioniert, hat ein newline nicht ausgegeben
+
+```
+Sync all cached disk operations to disk:
+echo s > /proc/sysrq-trigger
+reboot:
+echo b > /proc/sysrq-trigger
+```
+
+```
+merge pdf files:
+gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -sOutputFile=finished.pdf file1.pdf file2.pdf
 ```
